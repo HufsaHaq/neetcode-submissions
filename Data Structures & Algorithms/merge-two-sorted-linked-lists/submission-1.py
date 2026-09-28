@@ -6,9 +6,10 @@
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode(0)
+        
         a = list1
         b = list2
+        dummy = ListNode(0) # dummy start - we'll need to dismiss this head
         tail = dummy
 
         while a and b:
@@ -23,4 +24,4 @@ class Solution:
 
         tail.next = a or b
 
-        return dummy.next
+        return dummy.next # to dismiss dummy value of 0 at the start

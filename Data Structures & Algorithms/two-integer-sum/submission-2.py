@@ -5,9 +5,8 @@ class Solution:
 
         for index , value in enumerate(nums):
             desired = target - value
-            if desired in hashmap:
+            if desired in hashmap.keys() and hashmap[desired] != index :
                 return [hashmap[desired] , index]
             hashmap[value] = index
-        return 
             
         

@@ -1,8 +1,9 @@
+from collections import defaultdict
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        nums.sort(reverse=True)
-        compare = list(set(nums))
-        compare.sort(reverse=True)
-        print(compare)
-        return not(nums == compare)
-        
+        seen = defaultdict(int)
+        for i in nums:
+            seen[i] = 1 + seen.get(i,0)
+            if seen[i] > 1:
+                return True
+        return False        
